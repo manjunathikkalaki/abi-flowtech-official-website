@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Flow Tech System – Industrial Engineering Solutions</title>
+		<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<script src="../js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<script>
+			// ── EMAILJS CONFIG — replace these 3 values after setup ──
+			const EJS_PUBLIC_KEY    = 'w94pOLX7ZxTW3lG_g';
+			const EJS_SERVICE_ID    = 'service_5oyrxob';
+			const EJS_TEMPLATE_ID   = 'template_ycj9adl';
+			emailjs.init({ publicKey: EJS_PUBLIC_KEY });
+		</script>
+	</head>
+	<body>
+		<!-- NAV -->
+		<nav>
+			<a href="#home" class="nav-logo">
+				<!-- Inline SVG Logo -->
+				<svg height="48" viewBox="0 0 180 48" xmlns="http://www.w3.org/2000/svg" aria-label="Flow Tech System Logo">
+					<!-- Gear -->
+					<g transform="translate(24,24)">
+						<circle cx="0" cy="0" r="19" fill="none" stroke="#e05b14" stroke-width="2"/>
+						<!-- teeth -->
+						<g fill="#e05b14">
+							<rect x="-3" y="-23" width="6" height="7" rx="1.5"/>
+							<rect x="-3" y="16" width="6" height="7" rx="1.5"/>
+							<rect x="16" y="-3" width="7" height="6" rx="1.5"/>
+							<rect x="-23" y="-3" width="7" height="6" rx="1.5"/>
+							<g transform="rotate(45)">
+								<rect x="-3" y="-23" width="6" height="7" rx="1.5"/>
+								<rect x="-3" y="16" width="6" height="7" rx="1.5"/>
+								<rect x="16" y="-3" width="7" height="6" rx="1.5"/>
+								<rect x="-23" y="-3" width="7" height="6" rx="1.5"/>
+							</g>
+						</g>
+						<circle cx="0" cy="0" r="15" fill="#0b1f3a" stroke="#e05b14" stroke-width="1.5"/>
+						<circle cx="0" cy="0" r="12" fill="#1b3a5c"/>
+						<!-- flow waves -->
+						<path d="M-9 -2 C-5 -6, -1 -6, 0 -2 C1 2, 5 2, 9 -2" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+						<path d="M-9 3 C-5 -1, -1 -1, 0 3 C1 7, 5 7, 9 3" fill="none" stroke="#e05b14" stroke-width="1.8" stroke-linecap="round"/>
+						<circle cx="0" cy="0" r="3" fill="#e05b14"/>
+					</g>
+					<!-- Text -->
+					<text x="52" y="20" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="18" fill="#ffffff" letter-spacing="1">FLOW<tspan fill="#e05b14">TECH</tspan></text>
+					<text x="52" y="36" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="11" fill="#7398ba" letter-spacing="2.5">SYSTEM</text>
+					<line x1="52" y1="40" x2="170" y2="40" stroke="#e05b14" stroke-width="1" opacity="0.5"/>
+					<text x="52" y="47" font-family="'Barlow',sans-serif" font-size="7" fill="#4a6a8a" letter-spacing="1">BANGALORE · EST. 2010</text>
+				</svg>
+			</a>
+			<ul class="nav-links">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#clients">Clients</a></li>
+				<li><a href="#machines">Machines</a></li>
+				<li><a href="#testimonials">Feedback</a></li>
+				<li><a href="#location">Location</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+				<span></span><span></span><span></span>
+			</button>
+		</nav>
+
+		<!-- MOBILE MENU -->
+		<div class="mobile-menu" id="mobileMenu">
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#clients">Clients</a></li>
+				<li><a href="#machines">Machines</a></li>
+				<li><a href="#testimonials">Feedback</a></li>
+				<li><a href="#location">Location</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+
+		<!-- HERO -->
+		<section id="home">
+			<div class="scroll-line"></div>
+			<div class="hero-tag">
+                Bangalore's Industrial Engineering Experts
+            </div>
+
+			<h1 class="hero-title">
+				Precision.<br/>
+				<em>Performance.</em><br/>
+				Engineering.
+			</h1>
+
+			<p class="hero-sub">
+				Flow Tech System delivers world-class CNC machine servicing &amp; retrofitting, hydraulic systems manufacturing, and special purpose machine solutions across India's leading industries.
+			</p>
+
+			<div class="hero-btns">
+				<a href="#services" class="btn-primary">Explore Services</a>
+				<a href="#contact" class="btn-outline">Get a Quote</a>
+			</div>
+
+			<div class="hero-stats">
+				<div class="stat">
+                    <div class="stat-num">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+				<div class="stat">
+                    <div class="stat-num">20+</div>
+                    <div class="stat-label">Client Companies</div>
+                </div>
+				<div class="stat">
+                    <div class="stat-num">3</div>
+                    <div class="stat-label">Core Divisions</div>
+                </div>
+			</div>
+		</section>
+
+		<!-- ABOUT -->
+		<section id="about">
+			<div class="about-grid">
+				<div>
+					<div class="section-tag">Who We Are</div>
+						<h2 class="section-title">Built on <em>Precision</em> &amp; Trust</h2>
+						<p class="section-desc">Flow Tech System is a Bangalore-based engineering company specialising in CNC machine retrofitting, hydraulic system manufacturing, and automation solutions. Founded by Devendrappa Biradar, we serve prestigious clients including BOSCH, HAL, TVS, Flowserve and many more.</p>
+						<ul class="values-list">
+							<li>Complete CNC machine overhaul — both electrical &amp; mechanical systems</li>
+							<li>In-house hydraulic cylinder and power pack manufacturing</li>
+							<li>Design &amp; build of Special Purpose Machines (SPM) for automation</li>
+							<li>GST-registered with transparent engineering practices</li>
+							<li>Serving top-tier clients across Bengaluru, Hosur &amp; Tamil Nadu</li>
+							<li>Rapid response service &amp; on-site support across South India</li>
+						</ul>
+					</div>
+					<div class="about-visual">
+					<h3>Devendrappa Biradar</h3>
+					<p>Founder &amp; Chief Engineer, Flow Tech System brings two decades of hands-on expertise in CNC servicing, hydraulic engineering and industrial automation to every project.</p>
+					<p style="margin-top:.8rem;">Our clients trust us for precision outcomes, on-time delivery and transparent engineering practices — every time.</p>
+					<div class="gstin-badge">GSTIN: 29AHQPD4588B1Z3</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SERVICES -->
+		<section id="services">
+			<div class="section-tag">What We Do</div>
+			<h2 class="section-title">Our Core <em>Services</em></h2>
+			<p class="section-desc">Three specialised divisions delivering end-to-end industrial engineering solutions for manufacturing plants across India.</p>
+			<div class="services-grid">
+				<div class="svc-card">
+					<div class="svc-card-header"><div class="svc-icon">🔧</div><h3>CNC Machine Service &amp; Retrofitting</h3></div>
+					<p>Complete electrical and mechanical overhaul, calibration, and retrofitting of CNC machines. We restore machines to OEM-standard accuracy and extend their productive life significantly.</p>
+					<div class="svc-tags"><span class="svc-tag">VMC</span><span class="svc-tag">HMC</span><span class="svc-tag">Turning Centre</span><span class="svc-tag">Electrical</span><span class="svc-tag">Mechanical</span><span class="svc-tag">Retrofitting</span></div>
+				</div>
+
+				<div class="svc-card">
+					<div class="svc-card-header"><div class="svc-icon">⚡</div><h3>Hydraulic Systems &amp; Manufacturing</h3></div>
+					<p>Custom design and manufacture of hydraulic cylinders, power packs, manifold blocks, solenoid valves, and hydraulic press systems tailored to your industrial requirements.</p>
+					<div class="svc-tags"><span class="svc-tag">Power Pack</span><span class="svc-tag">Cylinder</span><span class="svc-tag">Solenoid Valve</span><span class="svc-tag">Manifold Block</span><span class="svc-tag">Hydraulic Press</span></div>
+				</div>
+
+				<div class="svc-card">
+					<div class="svc-card-header"><div class="svc-icon">🤖</div><h3>Special Purpose Machines &amp; Automation</h3></div>
+					<p>End-to-end design, fabrication and installation of SPMs built for specific manufacturing tasks, boosting throughput and reducing manual dependency.</p>
+					<div class="svc-tags"><span class="svc-tag">SPM Design</span><span class="svc-tag">Automation</span><span class="svc-tag">Jig &amp; Fixture</span><span class="svc-tag">PLC Integration</span></div>
+				</div>
+
+				<div class="svc-card">
+					<div class="svc-card-header"><div class="svc-icon">🔩</div><h3>Machine Repair &amp; Reconditioning</h3></div>
+					<p>Precision reconditioning of spindles, guideways, ballscrews and servo drive systems. We restore dimensional accuracy and repeatability to industry standards.</p>
+					<div class="svc-tags"><span class="svc-tag">Spindle Repair</span><span class="svc-tag">Ballscrew</span><span class="svc-tag">Guideways</span><span class="svc-tag">Servo Drive</span></div>
+				</div>
+
+				<div class="svc-card">
+					<div class="svc-card-header"><div class="svc-icon">🏭</div><h3>Installation &amp; Commissioning</h3></div>
+					<p>Professional on-site installation, alignment, commissioning and operator training for CNC machines, hydraulic systems and automation equipment.</p>
+					<div class="svc-tags"><span class="svc-tag">On-Site</span><span class="svc-tag">Commissioning</span><span class="svc-tag">Training</span><span class="svc-tag">Alignment</span></div>
+				</div>
+
+				<div class="svc-card">
+					<div class="svc-card-header"><div class="svc-icon">📋</div><h3>Annual Maintenance Contracts</h3></div>
+					<p>Structured AMC programs with preventive maintenance visits, priority breakdown response, and spare parts management to maximise machine uptime year-round.</p>
+					<div class="svc-tags"><span class="svc-tag">Preventive</span><span class="svc-tag">Priority Support</span><span class="svc-tag">Spare Parts</span><span class="svc-tag">Reporting</span></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CLIENTS -->
+		<section id="clients">
+			<div class="section-tag">Our Valued Clients</div>
+			<h2 class="section-title" style="color:#fff;">Trusted by <em>Industry Leaders</em></h2>
+			<div class="client-category">
+				<div class="cat-title">CNC Machine Servicing &amp; Retrofitting</div>
+				<div class="clients-row">
+					<div class="client-pill">🏢 BOSCH</div>
+					<div class="client-pill">🏢 FLOWSERVE</div>
+					<div class="client-pill">🛩️ HAL – Hindustan Aeronautics Ltd</div>
+					<div class="client-pill">🏢 British Engine Pvt Ltd</div>
+					<div class="client-pill">🏢 Perfect Alloy Pvt Ltd</div>
+					<div class="client-pill">🏢 TVS (Hosur)</div>
+					<div class="client-pill">🏢 ASK Pvt Ltd</div>
+				</div>
+			</div>
+			<div class="client-category">
+				<div class="cat-title">Hydraulic Systems Supply</div>
+				<div class="clients-row">
+					<div class="client-pill">🏢 GE Bell – Whitefield</div>
+					<div class="client-pill">🏢 British Engine Pvt Ltd</div>
+					<div class="client-pill">🏢 Perfect Alloy Pvt Ltd</div>
+					<div class="client-pill">🏢 ASK Pvt Ltd – Mallur</div>
+				</div>
+			</div>
+			<div class="client-category">
+				<div class="cat-title">Special Purpose Machines (SPM)</div>
+				<div class="clients-row">
+					<div class="client-pill">🏢 BS Technologies</div>
+					<div class="client-pill">🏢 New Cast Technologies Pvt Ltd</div>
+					<div class="client-pill">🏢 Perfect Alloy Pvt Ltd</div>
+					<div class="client-pill">🏢 GE Bell Pvt Ltd – Whitefield</div>
+					<div class="client-pill">🏢 TD Power Pvt Ltd</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- MACHINES -->
+		<section id="machines">
+			<div class="section-tag">Equipment Expertise</div>
+			<h2 class="section-title">Machine <em>Capabilities</em></h2>
+			<p class="section-desc">We service, retrofit and manufacture components for all major CNC, hydraulic and automation machine types used in precision manufacturing across India.</p>
+
+			<div class="machine-grid">
+
+				<!-- VMC -->
+				<div class="machine-card">
+					<div class="machine-img">
+						<img src="../img/VMC_Machine.jpg"
+							alt="VMC Vertical Machining Centre"
+							onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#0b1f3a,#1b3a5c)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4rem;\'>🔩</div>'"/>
+						<div class="machine-img-overlay">
+							<div class="machine-img-label">CNC Machining</div>
+						</div>
+					</div>
+					<div class="machine-body">
+						<h3>VMC – Vertical Machining Centre</h3>
+						<p>The VMC is a CNC machine tool where the spindle axis is vertically oriented, ideal for drilling, boring, milling and tapping operations on flat surfaces. Flow Tech performs complete electrical rewiring, spindle replacement, ballscrew reconditioning and FANUC/Siemens control upgrades.</p>
+						<div class="machine-specs">
+							<span class="machine-spec">Spindle Service</span>
+							<span class="machine-spec">Ballscrew Recon</span>
+							<span class="machine-spec">FANUC / Siemens</span>
+							<span class="machine-spec">ATC Repair</span>
+							<span class="machine-spec">Axis Calibration</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- HMC -->
+				<div class="machine-card">
+                    <div class="machine-img">
+                        <img src="../img/HMC_Machine.jpg"
+                            alt="HMC Horizontal Machining Centre"
+                            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#1a1a3a,#2e2e6b)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4rem;\'>⚙️</div>'"/>
+                        <div class="machine-img-overlay">
+                            <div class="machine-img-label">CNC Machining</div>
+                        </div>
+                    </div>
+                    <div class="machine-body">
+                        <h3>HMC – Horizontal Machining Centre</h3>
+                        <p>The HMC has a horizontally-oriented spindle, enabling multi-face machining in a single setup. Widely used in aerospace and automotive production. We handle pallet changers, rotary tables, ATC mechanisms, and full precision recalibration for all HMC brands.</p>
+                        <div class="machine-specs">
+                            <span class="machine-spec">Pallet System</span>
+                            <span class="machine-spec">Rotary Table</span>
+                            <span class="machine-spec">Aerospace Grade</span>
+                            <span class="machine-spec">Full Overhaul</span>
+                            <span class="machine-spec">Multi-axis</span>
+                        </div>
+                    </div>
+				</div>
+
+				<!-- Turning Centre -->
+				<div class="machine-card">
+                    <div class="machine-img">
+                        <img src="../img/CNC_Turning_Machine.jpg"
+                            alt="CNC Turning Centre"
+                            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#1a300a,#2d5c10)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4rem;\'>🔄</div>'"/>
+                        <div class="machine-img-overlay">
+                            <div class="machine-img-label">CNC Turning</div>
+                        </div>
+                    </div>
+                    <div class="machine-body">
+                        <h3>CNC Turning Centre</h3>
+                        <p>CNC Turning Centres use a rotating workpiece and fixed cutting tool to produce cylindrical parts with high precision. Flow Tech services headstocks, turrets, tailstocks, live tooling and hydraulic chucks — restoring dimensional accuracy and repeat performance.</p>
+                        <div class="machine-specs">
+                            <span class="machine-spec">Headstock Recon</span>
+                            <span class="machine-spec">Turret Repair</span>
+                            <span class="machine-spec">Hydraulic Chuck</span>
+                            <span class="machine-spec">Live Tooling</span>
+                            <span class="machine-spec">Tailstock</span>
+                        </div>
+                    </div>
+				</div>
+
+				<!-- Hydraulic Power Pack -->
+				<div class="machine-card">
+                    <div class="machine-img">
+                        <img src="../img/Hydraulic_Power_Pack_Machine.jpg"
+                            alt="Hydraulic Power Pack"
+                            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#2a1a0a,#5c3510)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4rem;\'>💧</div>'"/>
+                        <div class="machine-img-overlay">
+                            <div class="machine-img-label">Hydraulic Systems</div>
+                        </div>
+                    </div>
+                    <div class="machine-body">
+                        <h3>Hydraulic Power Pack</h3>
+                        <p>A Hydraulic Power Pack is a self-contained unit combining a motor, pump, reservoir and control valves that generates hydraulic power for machines and presses. Flow Tech designs and manufactures custom units from 1 HP to 100 HP with full pressure and flow control systems.</p>
+                        <div class="machine-specs">
+                        <span class="machine-spec">1–100 HP Range</span>
+                        <span class="machine-spec">Pressure Control</span>
+                        <span class="machine-spec">Directional Valves</span>
+                        <span class="machine-spec">Filtration</span>
+                        <span class="machine-spec">Custom Design</span>
+                        </div>
+                    </div>
+				</div>
+
+				<!-- Hydraulic Cylinder -->
+				<div class="machine-card">
+                    <div class="machine-img">
+                        <img src="../img/Hydraulic_Cylinder_Machine.jpg"
+                            alt="Hydraulic Cylinder"
+                            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#2a0a1a,#5c1035)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4rem;\'>🏗️</div>'"/>
+                        <div class="machine-img-overlay">
+                            <div class="machine-img-label">Hydraulic Components</div>
+                        </div>
+                    </div>
+                    <div class="machine-body">
+                        <h3>Hydraulic Cylinder &amp; Press</h3>
+                        <p>Hydraulic cylinders convert fluid pressure into linear mechanical force, used across clamping, pressing, lifting and forming operations. Flow Tech manufactures single and double-acting cylinders, and hydraulic presses up to 500 tonnes with precision sealing and hard chrome finishing.</p>
+                        <div class="machine-specs">
+                            <span class="machine-spec">Single / Double Acting</span>
+                            <span class="machine-spec">Up to 500T</span>
+                            <span class="machine-spec">Chrome Finish</span>
+                            <span class="machine-spec">Custom Bore</span>
+                            <span class="machine-spec">Seal Repair</span>
+                        </div>
+                    </div>
+				</div>
+
+				<!-- SPM -->
+				<div class="machine-card">
+                    <div class="machine-img">
+                        <img src="../img/SPM_Machine.jpg"
+                            alt="Special Purpose Machine SPM"
+                            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#0a2a2a,#105c5c)'; this.parentElement.innerHTML+='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4rem;\'>🤖</div>'"/>
+                        <div class="machine-img-overlay">
+                            <div class="machine-img-label">Automation / SPM</div>
+                        </div>
+                    </div>
+                    <div class="machine-body">
+                        <h3>Special Purpose Machine (SPM)</h3>
+                        <p>SPMs are custom-built machines designed to perform a specific set of operations — drilling, tapping, reaming, milling or assembly — that cannot be done efficiently on standard machines. Flow Tech engineers SPMs to your exact cycle time, quality and throughput requirements with full PLC and pneumatic integration.</p>
+                        <div class="machine-specs">
+                            <span class="machine-spec">Drilling / Tapping</span>
+                            <span class="machine-spec">Reaming / Milling</span>
+                            <span class="machine-spec">PLC Control</span>
+                            <span class="machine-spec">Pneumatics</span>
+                            <span class="machine-spec">Jig &amp; Fixture</span>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</section>
+
+		<!-- TESTIMONIALS -->
+		<section id="testimonials">
+            <div class="section-tag">Customer Feedback</div>
+            <h2 class="section-title">What Our <em>Clients</em> Say</h2>
+            <p class="section-desc">Trusted feedback from our valued clients across manufacturing, aerospace, and automotive sectors.</p>
+            <div class="testimonial-grid">
+                <div class="t-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="t-quote">Flow Tech delivered exceptional CNC retrofitting results on our VMCs. The machines now perform with improved accuracy and our downtime has dropped by 60%. Professional team with deep expertise.</p>
+                    <div class="t-author"><div class="t-avatar">BO</div><div><div class="t-name">Production Manager</div><div class="t-company">BOSCH – Bengaluru</div></div></div>
+                </div>
+
+                <div class="t-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="t-quote">We've been sourcing hydraulic cylinders and power packs from Flow Tech for over 5 years. Consistent quality, on-time delivery, and excellent after-sales support every single time.</p>
+                    <div class="t-author"><div class="t-avatar">BE</div><div><div class="t-name">Engineering Head</div><div class="t-company">British Engine Pvt Ltd</div></div></div>
+                </div>
+
+                <div class="t-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="t-quote">The SPM designed and installed by Flow Tech System has dramatically improved our throughput. Excellent machine design, robust build quality, and the team was very responsive throughout.</p>
+                    <div class="t-author"><div class="t-avatar">BS</div><div><div class="t-name">Plant Head</div><div class="t-company">BS Technologies</div></div></div>
+                </div>
+
+                <div class="t-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="t-quote">HAL has used Flow Tech for multiple CNC overhauls. Their understanding of both electrical and mechanical systems gives them a unique edge. Highly skilled and dependable team.</p>
+                    <div class="t-author"><div class="t-avatar">HA</div><div><div class="t-name">Maintenance Engineer</div><div class="t-company">HAL – Hindustan Aeronautics Ltd</div></div></div>
+                </div>
+
+                <div class="t-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="t-quote">Excellent service on our HMC machines. The team diagnosed and resolved complex servo drive issues that other vendors had failed to fix. Cost-effective and reliable — highly recommended.</p>
+                    <div class="t-author"><div class="t-avatar">PA</div><div><div class="t-name">Works Manager</div><div class="t-company">Perfect Alloy Pvt Ltd</div></div></div>
+                </div>
+
+                <div class="t-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="t-quote">Flow Tech's hydraulic supply quality is outstanding. Their manifold blocks and power packs integrate seamlessly with our systems. A trusted partner for all our hydraulic requirements.</p>
+                    <div class="t-author"><div class="t-avatar">GE</div><div><div class="t-name">Senior Engineer</div><div class="t-company">GE Bell Pvt Ltd – Whitefield</div></div></div>
+                </div>
+            </div>
+		</section>
+
+		<!-- LOCATION MAP -->
+		<section id="location">
+            <div class="section-tag">Find Us</div>
+            <h2 class="section-title">Our <em>Location</em></h2>
+            <p class="section-desc">We are located in Karihobanahalli, Bangalore — easily accessible from Peenya Industrial Area, Rajajinagar and Yeshwanthpur.</p>
+
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3!2d77.4869236!3d13.0151768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzU0LjYiTiA3N8KwMjknMTMuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Thigalarapalya+Main+Road,+Karihobanahalli,+Bangalore+560058"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Flow Tech System Location – Karihobanahalli, Bangalore">
+                </iframe>
+            </div>
+
+            <div class="map-actions">
+                <a href="https://maps.google.com/?q=Thigalarapalya+Main+Rd,+Karihobanahalli,+Bengaluru,+Karnataka+560058,+India&ftid=0x3bae3c8c5f79816b:0x204572d985eb5ab2" target="_blank" rel="noopener" class="map-btn">
+                📍 Open in Google Maps
+                </a>
+                <a href="https://maps.google.com/maps/dir//Thigalarapalya+Main+Rd,+Karihobanahalli,+Bengaluru,+Karnataka+560058" target="_blank" rel="noopener" class="map-btn outline">
+                🧭 Get Directions
+                </a>
+            </div>
+		</section>
+
+		<!-- CONTACT -->
+		<section id="contact">
+            <div class="section-tag">Get in Touch</div>
+            <h2 class="section-title">Contact <em>Us</em></h2>
+            <p class="section-desc">Ready to discuss your engineering requirements? Reach out for a consultation or quote.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+
+                    <div class="info-item">
+                        <div class="info-icon">👤</div>
+                        <div>
+                            <div class="info-label">Contact Person</div>
+                            <div class="info-value">Jyothi.D.Biradar / Devendrappa Biradar</div>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <div class="info-label">Phone</div>
+                            <div class="info-value">
+                                <a href="tel:+917760629336">+91 77606 29336</a> | <a href="tel:+919986482164">+91 99864 82164</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <div class="info-label">Email</div>
+                            <div class="info-value">
+                                <a href="mailto:flowtechsystem.db@gmail.com">flowtechsystem.db@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <div class="info-label">Address</div>
+                            <div class="info-value">
+                                <a href="https://maps.google.com/?q=Thigalarapalya+Main+Rd,+Karihobanahalli,+Bengaluru,+Karnataka+560058" target="_blank" style="color:#e05b14;"># 5/4, 9th Cross, Balaji Nagar,<br/>Thigalarapalya Main Road,<br/>Karihobanahalli, Bangalore – 560 058</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🏛️</div>
+                        <div>
+                            <div class="info-label">GST Number</div>
+                            <div class="info-value" style="color:#c8992a;font-weight:600;">29AHQPD4588B1Z3</div>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🕐</div>
+                        <div>
+                            <div class="info-label">Working Hours</div>
+                            <div class="info-value">Monday – Saturday: 9:00 AM – 6:30 PM<br/>Emergency support available 24×7</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name *</label>
+                                <input type="text" placeholder="Full name" id="f-name" oninput="validateName()" onblur="validateName(true)"/>
+                                <span class="field-icon" id="icon-name"></span>
+                                <div class="field-error" id="err-name">Please enter your full name (at least 2 characters)</div>
+                                <div class="field-ok" id="ok-name">✔ Looks good</div>
+                            </div>
+                            <div class="form-group company-wrap">
+                                <label>Company</label>
+                                <input type="text" placeholder="Company name" id="f-company" autocomplete="off"
+                                oninput="companyInput()" onblur="hideDropdownDelayed()" onkeydown="companyKeyNav(event)"/>
+                            <div class="company-dropdown" id="company-dropdown"></div>
+                        </div>
+                    </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Phone *</label>
+                                <input type="tel" placeholder="+91 XXXXX XXXXX" id="f-phone" oninput="formatPhone()" onblur="validatePhone(true)"/>
+                                <span class="field-icon" id="icon-phone"></span>
+                                <div class="field-error" id="err-phone">Enter a valid 10-digit Indian mobile number</div>
+                                <div class="field-ok" id="ok-phone">✔ Valid number</div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" placeholder="you@company.com" id="f-email" oninput="validateEmail()" onblur="validateEmail(true)"/>
+                                <span class="field-icon" id="icon-email"></span>
+                                <div class="field-error" id="err-email">Enter a valid email address (e.g. name@company.com)</div>
+                                <div class="field-ok" id="ok-email">✔ Valid email</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Service Required *</label>
+                            <select id="f-service" onchange="validateService()">
+                                <option value="">– Select a service –</option>
+                                <option>CNC Machine Service &amp; Retrofitting</option>
+                                <option>Hydraulic Cylinder / Power Pack Manufacturing</option>
+                                <option>Special Purpose Machine (SPM)</option>
+                                <option>Machine Repair &amp; Reconditioning</option>
+                                <option>Annual Maintenance Contract (AMC)</option>
+                                <option>Other / General Enquiry</option>
+                            </select>
+                            <div class="field-error" id="err-service">Please select a service</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Machine / Equipment Details</label>
+                            <textarea placeholder="Describe your machine type, issue, or requirements…" id="f-msg" oninput="validateMsg()"></textarea>
+                            <div class="field-error" id="err-msg">Please provide at least 10 characters of detail</div>
+                        </div>
+
+                        <button class="form-submit" onclick="submitForm()">Send Enquiry →</button>
+                        <div class="form-success" id="f-success">✔ Thank you! We'll get back to you within 24 hours.</div>
+                    </div>
+                </div>
+            </div>
+		</section>
+
+		<!-- FOOTER -->
+		<footer>
+            <div class="footer-logo">⚙ Flow<span>Tech</span> System</div>
+            <div class="footer-copy">© 2026 Flow Tech System, Bangalore. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#clients">Clients</a>
+                <a href="#contact">Contact</a>
+            </div>
+		</footer>
+	</body>
+</html>
