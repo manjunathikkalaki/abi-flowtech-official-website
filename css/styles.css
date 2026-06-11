@@ -518,100 +518,133 @@ section {
 }
 
 /* MACHINES */
-#machines {
-	background: var(--white);
+#machines { 
+    background: var(--white); 
+    padding: 80px 8%; 
+    position: relative; 
+    clear: both; 
 }
 
-.machine-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1.8rem;
+.machine-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.8rem; 
+    margin-top: 3rem;
 }
 
-.machine-card {
-	border: 1px solid var(--border);
-	border-radius: 6px;
-	overflow: hidden;
-	transition: transform .25s, box-shadow .25s;
-	background: var(--white);
+.machine-card { 
+    border: 1px solid var(--border); 
+    border-radius: 8px; 
+    overflow: hidden; 
+    background: var(--white); 
+    display: flex; 
+    flex-direction: column; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-.machine-card:hover {
-	transform: translateY(-6px);
-	box-shadow: 0 16px 40px rgba(11, 31, 58, .13);
+.machine-card:hover { 
+    transform: translateY(-6px); 
+    box-shadow: 0 16px 40px rgba(11,31,58,0.12); 
 }
 
-.machine-img {
-	height: 200px;
-	overflow: hidden;
-	position: relative;
+/* ── IMAGE SECTION ── */
+.machine-img { 
+    height: 220px; 
+    overflow: hidden; 
+    position: relative; 
+    background: var(--navy); 
 }
 
-.machine-img img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	transition: transform .4s;
-	display: block;
+.machine-img img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+    transition: transform 0.4s ease; 
 }
 
-.machine-card:hover .machine-img img {
-	transform: scale(1.06);
+.machine-card:hover .machine-img img { 
+    transform: scale(1.05); 
 }
 
-.machine-img-overlay {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: linear-gradient(to top, rgba(11, 31, 58, .85) 0%, transparent 100%);
-	padding: 12px 14px 10px;
+.machine-img-overlay { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    background: linear-gradient(to top, rgba(11,31,58,0.95) 0%, rgba(11,31,58,0.4) 70%, transparent 100%); 
+    padding: 20px 15px; 
 }
 
-.machine-img-label {
-	font-family: 'Barlow Condensed', sans-serif;
-	font-size: .7rem;
-	font-weight: 700;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	color: var(--accent);
+.machine-img-label { 
+    font-family: 'Barlow Condensed', sans-serif; 
+    font-size: 0.7rem; 
+    font-weight: 800; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    color: var(--white); /* Changed to white for better contrast against the background */
+    
+    /* Background block settings */
+    background: var(--accent); 
+    padding: 4px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.machine-body {
-	padding: 1.4rem 1.5rem;
+/* Remove the dot since the background block now highlights it sufficiently */
+.machine-img-label::before {
+    display: none;
+}
+/* ── BODY & TYPOGRAPHY ── */
+.machine-body { 
+    padding: 1.8rem; 
+    flex-grow: 1; /* Forces cards to stretch uniformly in the grid */
 }
 
-.machine-body h3 {
-	font-family: 'Barlow Condensed', sans-serif;
-	font-size: 1.6rem;
-	font-weight: 800;
-	text-transform: uppercase;
-	margin-bottom: .5rem;
-	color: var(--navy);
-	letter-spacing: .5px;
+.machine-body h3 { 
+    font-family: 'Barlow Condensed', sans-serif; 
+    font-size: 1.55rem; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    color: var(--navy); 
+    line-height: 1.1; 
+    margin-bottom: 0.8rem; 
+    letter-spacing: 0.2px;
 }
 
-.machine-body p {
-	font-size: .87rem;
-	color: var(--gray);
-	line-height: 1.65;
-	margin-bottom: .8rem;
+.machine-body p { 
+    font-size: 0.9rem; 
+    color: var(--gray); 
+    line-height: 1.6; 
+    margin-bottom: 1.5rem; 
 }
 
-.machine-specs {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 6px;
+/* ── SPEC BADGES ── */
+.machine-specs { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
 }
 
-.machine-spec {
-	background: var(--light);
-	color: var(--navy);
-	font-size: .7rem;
-	font-weight: 600;
-	padding: 3px 9px;
-	border-radius: 20px;
-	border: 1px solid var(--border);
+.machine-spec { 
+    background: rgba(224, 91, 20, 0.05); 
+    color: var(--navy); 
+    font-size: 0.7rem; 
+    font-weight: 600; 
+    padding: 4px 10px; 
+    border-radius: 4px; 
+    border: 1px solid rgba(224, 91, 20, 0.15); 
+}
+
+/* ── RESPONSIVE GRID BREAKPOINTS ── */
+@media (max-width: 1024px) {
+    .machine-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 650px) {
+    .machine-grid { grid-template-columns: 1fr; }
+    #machines { padding: 60px 5%; }
 }
 
 /* ── 9. TESTIMONIAL CARDS (INFINITE CRAWL WITH EDGE ACTION OVERLAYS) ── */
