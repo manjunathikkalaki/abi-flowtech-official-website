@@ -2,35 +2,62 @@
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 
-function toggleMenu(e) {
-	e.preventDefault();
-	e.stopPropagation();
-	hamburger.classList.toggle('open');
-	mobileMenu.classList.toggle('open');
+if (hamburger && mobileMenu) {
+	// Ensure menu starts closed
+	hamburger.classList.remove('open');
+	mobileMenu.classList.remove('open');
+	
+	// Function to close menu
+	function closeMenu() {
+		hamburger.classList.remove('open');
+		mobileMenu.classList.remove('open');
+	}
+	
+	// Function to toggle menu
+	function toggleMenu(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		hamburger.classList.toggle('open');
+		mobileMenu.classList.toggle('open');
+	}
+
+	// Hamburger button events
+	hamburger.addEventListener('click', toggleMenu);
+	hamburger.addEventListener('touchstart', (e) => e.preventDefault(), { passive: false });
+	hamburger.addEventListener('touchend', toggleMenu, { passive: false });
+
+	// Close menu when any link is clicked inside mobile menu
+	mobileMenu.querySelectorAll('a').forEach(link => {
+		link.addEventListener('click', closeMenu);
+		link.addEventListener('touchend', closeMenu, { passive: true });
+	});
+
+	// Close menu when tapping outside (touch devices)
+	document.addEventListener('touchstart', function(e) {
+		if (mobileMenu.classList.contains('open') &&
+			!mobileMenu.contains(e.target) &&
+			!hamburger.contains(e.target)) {
+			closeMenu();
+		}
+	}, { passive: true });
+
+	// Close menu when clicking outside (desktop)
+	document.addEventListener('click', function(e) {
+		if (mobileMenu.classList.contains('open') &&
+			!mobileMenu.contains(e.target) &&
+			!hamburger.contains(e.target) &&
+			window.innerWidth < 768) {
+			closeMenu();
+		}
+	}, false);
+
+	// Close on Escape key
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+			closeMenu();
+		}
+	});
 }
-
-hamburger.addEventListener('click', toggleMenu);
-hamburger.addEventListener('touchend', toggleMenu, { passive: false });
-
-// Close mobile menu when a link is clicked
-mobileMenu.querySelectorAll('a').forEach(link => {
-	function closeMenu(e) {
-		hamburger.classList.remove('open');
-		mobileMenu.classList.remove('open');
-	}
-	link.addEventListener('click', closeMenu);
-	link.addEventListener('touchend', closeMenu, { passive: true });
-});
-
-// Close menu when tapping outside
-document.addEventListener('touchstart', function(e) {
-	if (mobileMenu.classList.contains('open') &&
-		!mobileMenu.contains(e.target) &&
-		!hamburger.contains(e.target)) {
-		hamburger.classList.remove('open');
-		mobileMenu.classList.remove('open');
-	}
-}, { passive: true });
 
 // Active nav highlight on scroll
 const sections = document.querySelectorAll('section[id]');
@@ -48,7 +75,9 @@ window.addEventListener('scroll', () => {
 
 // Smooth scroll — iOS Safari compatible
 function smoothScrollTo(target) {
-	const targetPos = target.getBoundingClientRect().top + window.pageYOffset - 68;
+	const isMobile = window.innerWidth < 768;
+	const navHeight = isMobile ? 60 : 68;
+	const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
 	const startPos = window.pageYOffset;
 	const distance = targetPos - startPos;
 	const duration = 500;
