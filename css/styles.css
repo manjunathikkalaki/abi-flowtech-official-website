@@ -650,7 +650,7 @@ section {
 /* ── 9. TESTIMONIAL CARDS (INFINITE CRAWL WITH EDGE ACTION OVERLAYS) ── */
 #testimonials {
 	background: var(--light);
-	padding: 60px 4% 45px 4%;
+	padding: 40px 8%;
 	width: 100%;
 	box-sizing: border-box;
 	overflow: hidden;
