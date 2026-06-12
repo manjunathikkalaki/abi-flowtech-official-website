@@ -609,3 +609,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 })();
+
+// Toggle Popup
+function toggleWaPopup() {
+    const overlay = document.getElementById('waPopupOverlay');
+    overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
+}
+
+// WhatsApp Redirect
+function sendToWhatsApp() {
+    const phone = document.getElementById('waPhoneInput').value;
+    const msg = document.getElementById('waMessageInput').value;
+    if (!phone) { alert("Please enter your number"); return; }
+    window.open(`https://wa.me/91${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// Drag & Drop
+const floatBtn = document.getElementById('whatsappFloat');
+let isDragging = false;
+let startX, startY, initialLeft, initialTop;
+
+floatBtn.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    initialLeft = floatBtn.offsetLeft;
+    initialTop = floatBtn.offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    floatBtn.style.left = (initialLeft + (e.clientX - startX)) + 'px';
+    floatBtn.style.top = (initialTop + (e.clientY - startY)) + 'px';
+    floatBtn.style.right = 'auto'; floatBtn.style.bottom = 'auto';
+});
+
+document.addEventListener('mouseup', () => isDragging = false);

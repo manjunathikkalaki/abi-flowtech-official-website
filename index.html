@@ -647,6 +647,28 @@
                 <a href="#contact">Contact Support</a>
             </div>
         </footer>
-        <script src="js/script.js"></script>
+        
+        <!-- // WHATSAPP FLOAT BUTTON AND POPUP -->
+        <div class="wa-float" id="whatsappFloat">
+            <button class="wa-btn" onclick="toggleWaPopup()">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                <span>CHAT WITH US</span>
+            </button>
+        </div>
+
+        <div class="popup-overlay" id="waPopupOverlay">
+            <div class="wa-popup">
+                <button class="popup-close" onclick="toggleWaPopup()">&times;</button>
+                <h2>CHAT WITH US ON WHATSAPP</h2>
+                <textarea id="waMessageInput" placeholder="Your message or enquiry..."></textarea>
+                <div class="wa-phone-row">
+                    <span class="code">IN +91</span>
+                    <input type="tel" id="waPhoneInput" placeholder="Enter your mobile number" class="form-control">
+                </div>
+                <button class="popup-btn-wa" onclick="sendToWhatsApp()">START CHATTING</button>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script> <!-- Custom JS for form validation, carousel, and WhatsApp popup -->
     </body>
 </html>

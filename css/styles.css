@@ -1554,3 +1554,162 @@ footer {
 		}
 	}
 }
+
+/* WhatsApp Button */
+.wa-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    cursor: move;
+    touch-action: none;
+}
+.wa-btn {
+    background: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-family: 'Barlow Condensed', sans-serif;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: blink-pulse 2s infinite;
+    cursor: pointer;
+}
+.wa-btn img { width: 24px; }
+
+@keyframes blink-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Modal Overlay */
+.popup-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(11, 31, 58, 0.85);
+    display: none; align-items: center; justify-content: center; z-index: 10000;
+}
+.wa-popup {
+    background: var(--white); width: 90%; max-width: 380px; padding: 25px;
+    border-radius: 12px; position: relative;
+}
+.popup-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; border: none; background: none; cursor: pointer; }
+.wa-popup h2 { color: var(--navy); font-size: 1.2rem; margin-bottom: 15px; text-align: center; }
+.wa-popup textarea { width: 100%; height: 100px; padding: 10px; border: 1px solid var(--border); margin-bottom: 10px; resize: none; }
+.wa-phone-row { display: flex; align-items: center; border: 1px solid var(--border); padding: 10px; margin-bottom: 15px; }
+.wa-phone-row input { border: none; margin-left: 10px; width: 100%; }
+.popup-btn-wa { width: 100%; background: #000; color: white; border: none; padding: 12px; font-weight: bold; cursor: pointer; }
+
+/* --- Refined WhatsApp Modal --- */
+.wa-popup {
+    background: var(--white);
+    width: 90%;
+    max-width: 380px;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-top: 5px solid var(--accent); /* Brand accent on top */
+}
+
+.wa-popup h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--navy);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.wa-popup textarea, .wa-phone-row {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    padding: 12px;
+    transition: border-color 0.2s;
+}
+
+.wa-popup textarea:focus, .wa-phone-row:focus-within {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.wa-phone-row {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    margin-bottom: 20px;
+}
+
+.wa-phone-row .code {
+    color: var(--gray);
+    font-weight: 600;
+    margin-right: 10px;
+    border-right: 1px solid #cbd5e0;
+    padding-right: 10px;
+}
+
+.popup-btn-wa {
+    width: 100%;
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-weight: 700;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.popup-btn-wa:hover {
+    background: var(--accent);
+}
+
+/* Styling for your input field */
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Barlow', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    transition: border-color 0.3s ease;
+}
+
+/* Add focus effect for professional look */
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(224, 91, 20, 0.2);
+}
+
+#waMessageInput {
+    width: 100%;             /* Fills the container width */
+    min-height: 120px;       /* Starts with a professional, usable height */
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    resize: vertical;        /* Allows the user to drag to resize vertically */
+    box-sizing: border-box;  /* Ensures padding doesn't break the width */
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Add a hover/focus state for better UI feedback */
+#waMessageInput:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(224, 91, 20, 0.1);
+}
