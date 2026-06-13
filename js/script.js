@@ -123,116 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-   	// // ── 4. COMPANY AUTOCOMPLETE DROPDOWN ──
-	// const COMPANIES = [
-	// 	'BOSCH India', 'BOSCH Bengaluru', 'HAL – Hindustan Aeronautics Ltd',
-	// 	'TVS Motor Company', 'TVS Group', 'Flowserve India',
-	// 	'British Engine Pvt Ltd', 'GE Bell Pvt Ltd', 'BS Technologies',
-	// 	'Perfect Alloy Pvt Ltd', 'Toyota Kirloskar Motor', 'Wipro Infrastructure',
-	// 	'Bharat Heavy Electricals Ltd (BHEL)', 'Larsen & Toubro (L&T)',
-	// 	'ABB India', 'Siemens India', 'Honeywell India', '3M India',
-	// 	'Caterpillar India', 'Cummins India', 'Atlas Copco India',
-	// 	'SKF India', 'Schaeffler India', 'Timken India',
-	// 	'Kirloskar Electric', 'Kirloskar Brothers', 'Elgi Equipments',
-	// 	'Greaves Cotton', 'Thermax India', 'ISRO', 'DRDO',
-	// 	'Indian Oil Corporation', 'ONGC', 'NTPC',
-	// 	'Tata Motors', 'Mahindra & Mahindra', 'Bajaj Auto',
-	// 	'Hero MotoCorp', 'Ashok Leyland', 'Eicher Motors',
-	// 	'Exide Industries', 'Amara Raja Batteries',
-	// 	'Precision Castparts', 'Minda Industries',
-	// 	'Motherson Sumi Systems', 'Varroc Engineering',
-	// 	'Sundaram Fasteners', 'Rane Group',
-	// 	'Pricol', 'Lucas TVS', 'Suprajit Engineering',
-	// 	'Dynamatic Technologies', 'Walchandnagar Industries',
-	// 	'Bharat Forge', 'Kalyani Group', 'Sandvik India',
-	// 	'Kennametal India', 'Seco Tools India', 'Iscar India',
-	// 	'DMG Mori India', 'Mazak India', 'Fanuc India',
-	// 	'Mitsubishi Electric India', 'Yaskawa India', 'Omron India',
-	// 	'Renishaw India', 'Hexagon Manufacturing Intelligence',
-	// 	'Haas Automation India', 'TRUMPF India', 'Bystronic India'
-	// ];
-
-	// let dropdownHighlight = -1;
-
-	// // Global callback function to handle selection clicks securely
-	// window.selectCompany = function (name) {
-	// 	const compInput = document.getElementById('c_company');
-	// 	const dd = document.getElementById('companyDropdown');
-	// 	if (compInput) compInput.value = name;
-	// 	if (dd) dd.classList.remove('show');
-	// };
-
-	// document.addEventListener("DOMContentLoaded", function () {
-	// 	const compInput = document.getElementById('c_company');
-	// 	const dd = document.getElementById('companyDropdown');
-
-	// 	// FIXED: Corrected safety check variable name to prevent script execution crashes
-	// 	if (!compInput || !dd) return;
-
-	// 	// 1. Monitor typing inputs inside the form input element
-	// 	compInput.addEventListener('input', function () {
-	// 		const val = compInput.value.trim();
-	// 		dropdownHighlight = -1;
-
-	// 		// Requires at least 2 characters to trigger the dropdown suggestions
-	// 		if (val.length < 2) {
-	// 			dd.innerHTML = '';
-	// 			dd.classList.remove('show');
-	// 			return;
-	// 		}
-
-	// 		const q = val.toLowerCase();
-	// 		const matches = COMPANIES.filter(c => c.toLowerCase().includes(q)).slice(0, 7);
-
-	// 		if (!matches.length) {
-	// 			dd.innerHTML = '';
-	// 			dd.classList.remove('show');
-	// 			return;
-	// 		}
-
-	// 		dd.innerHTML = matches.map((c, i) => {
-	// 			const escapedVal = val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-	// 			const hi = c.replace(new RegExp(`(${escapedVal})`, 'gi'), '<mark>$1</mark>');
-	// 			const safeName = c.replace(/'/g, "\\'").replace(/"/g, '"');
-
-	// 			return `<div class="company-option" data-idx="${i}" onmousedown="selectCompany('${safeName}')">${hi}</div>`;
-	// 		}).join('');
-
-	// 		dd.classList.add('show');
-	// 	});
-
-	// 	// 2. Keyboard accessibility navigation rules (ArrowDown, ArrowUp, Enter, Escape)
-	// 	compInput.addEventListener('keydown', function (e) {
-	// 		const opts = dd.querySelectorAll('.company-option');
-	// 		if (!opts.length || !dd.classList.contains('show')) return;
-
-	// 		if (e.key === 'ArrowDown') {
-	// 			e.preventDefault();
-	// 			dropdownHighlight = Math.min(dropdownHighlight + 1, opts.length - 1);
-	// 		} else if (e.key === 'ArrowUp') {
-	// 			e.preventDefault();
-	// 			dropdownHighlight = Math.max(dropdownHighlight - 1, 0);
-	// 		} else if (e.key === 'Enter' && dropdownHighlight >= 0) {
-	// 			e.preventDefault();
-	// 			selectCompany(opts[dropdownHighlight].textContent.trim());
-	// 			return;
-	// 		} else if (e.key === 'Escape') {
-	// 			dd.classList.remove('show');
-	// 			return;
-	// 		}
-
-	// 		opts.forEach((o, i) => o.classList.toggle('highlighted', i === dropdownHighlight));
-	// 		if (dropdownHighlight >= 0) opts[dropdownHighlight].scrollIntoView({
-	// 			block: 'nearest'
-	// 		});
-	// 	});
-
-	// 	// 3. Clear suggestions panel view safely if input loses focus bounds
-	// 	compInput.addEventListener('blur', function () {
-	// 		setTimeout(() => dd.classList.remove('show'), 200);
-	// 	});
-	// });
-
 	// ── 5. FORM SUBMIT EXECUTION ──
 	if (form) {
 		form.addEventListener('submit', function (e) {
@@ -411,76 +301,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
-// // ── COMPANY AUTOCOMPLETE LIST TRACKER ENGINE ──
-// document.addEventListener("DOMContentLoaded", function () {
-// 	const companyInput = document.getElementById("c_company");
-// 	const dropdown = document.getElementById("companyDropdown");
-
-// 	if (!companyInput || !dropdown) return;
-
-// 	// Exact company list from verified client records
-// 	const clientsList = [
-// 		"BOSCH – Bengaluru",
-// 		"British Engine Pvt Ltd",
-// 		"BS Technologies",
-// 		"HAL – Aerospace Ltd",
-// 		"Perfect Alloy Pvt Ltd",
-// 		"GE Bell Pvt Ltd – Whitefield"
-// 	];
-
-// 	// Monitor text inputs inside form field
-// 	companyInput.addEventListener("input", function () {
-// 		const value = this.value.trim();
-// 		const query = value.toLowerCase();
-
-// 		dropdown.innerHTML = ""; // Clear out previous rendering passes
-
-// 		if (!query) {
-// 			dropdown.classList.remove("show");
-// 			return;
-// 		}
-
-// 		// Filter array data matching characters typed
-// 		const matches = clientsList.filter(company =>
-// 			company.toLowerCase().includes(query)
-// 		);
-
-// 		if (matches.length === 0) {
-// 			dropdown.classList.remove("show");
-// 			return;
-// 		}
-
-// 		// Inject matching suggestion rows dynamically
-// 		matches.forEach(match => {
-// 			const optionItem = document.createElement("div");
-// 			optionItem.className = "company-option";
-
-// 			// Highlight matching character strings inside rows matching your CSS markup
-// 			const regex = new RegExp(`(${value})`, "gi");
-// 			optionItem.innerHTML = match.replace(regex, "<mark>$1</mark>");
-
-// 			// Update input field values smoothly when a user clicks a suggestion
-// 			optionItem.addEventListener("click", function () {
-// 				companyInput.value = match;
-// 				dropdown.classList.remove("show");
-// 				companyInput.focus();
-// 			});
-
-// 			dropdown.appendChild(optionItem);
-// 		});
-
-// 		dropdown.classList.add("show");
-// 	});
-
-// 	// Safely close panel if user clicks outside the autocomplete window area
-// 	document.addEventListener("click", function (e) {
-// 		if (e.target !== companyInput && e.target !== dropdown) {
-// 			dropdown.classList.remove("show");
-// 		}
-// 	});
-// });
-
-
 // ── COMPANY AUTOCOMPLETE ENGINE ──
 (function() {
     // 1. Unified Dataset Array (Combines local industrial leaders with api fallbacks)
@@ -609,3 +429,55 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 })();
+
+// Toggle Popup
+function toggleWaPopup() {
+    const overlay = document.getElementById('waPopupOverlay');
+    overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
+}
+
+// WhatsApp Redirect
+function sendToWhatsApp() {
+    // 1. Your official company WhatsApp number
+    const companyNumber = "917760629336"; 
+    
+    // 2. Get the message from the textarea
+    const msg = document.getElementById('waMessageInput').value;
+    
+    // 3. Optional: Get user's name/number if you want to include it IN the message body
+    const userPhone = document.getElementById('waPhoneInput').value;
+    
+    // 4. Construct a professional message format
+    // This includes the user's details inside the message sent TO you
+    const fullMessage = `Hello, I have an enquiry.\n\nMessage: ${msg}\nFrom Number: ${userPhone}`;
+    
+    // 5. Redirect to your number with the pre-filled message
+    const url = `https://wa.me/${companyNumber}?text=${encodeURIComponent(fullMessage)}`;
+    
+    window.open(url, '_blank');
+    
+    // Close modal after sending
+    toggleWaPopup();
+}
+
+// Drag & Drop
+const floatBtn = document.getElementById('whatsappFloat');
+let isDragging = false;
+let startX, startY, initialLeft, initialTop;
+
+floatBtn.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    initialLeft = floatBtn.offsetLeft;
+    initialTop = floatBtn.offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    floatBtn.style.left = (initialLeft + (e.clientX - startX)) + 'px';
+    floatBtn.style.top = (initialTop + (e.clientY - startY)) + 'px';
+    floatBtn.style.right = 'auto'; floatBtn.style.bottom = 'auto';
+});
+
+document.addEventListener('mouseup', () => isDragging = false);
