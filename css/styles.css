@@ -148,6 +148,19 @@ nav {
 }
 
 /* HERO */
+/* #home {
+	height: 100vh;
+	min-height: 640px;
+	background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 55%, #24547a 100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 120px 8% 80px;
+	position: relative;
+	overflow: hidden;
+} */
+
 #home {
     height: 100vh;
     min-height: 640px;
@@ -186,7 +199,7 @@ nav {
 	text-transform: uppercase;
 	padding: 4px 14px;
 	border-radius: 2px;
-	margin-bottom: 0rem;
+	margin-bottom: 1.2rem;
 	display: inline-block;
 }
 
@@ -199,7 +212,6 @@ nav {
 	margin-bottom: 1rem;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	margin-top: 0.8rem;
 }
 
 .hero-title em {
@@ -1502,7 +1514,7 @@ footer {
 
 	.hero-stats {
 		position: static;
-		margin-top: 0rem;
+		margin-top: 2.5rem;
 		gap: 2rem;
 	}
 
