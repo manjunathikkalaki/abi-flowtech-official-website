@@ -186,6 +186,60 @@ nav {
 	flex-wrap: wrap;
 }
 
+/* --- MOBILE LEFT-ALIGN FIXES --- */
+@media (max-width: 768px) {
+    /* 1. Left-align the home section */
+    #home {
+        height: auto !important;
+        min-height: 90vh;
+        padding-top: 100px;
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; /* Aligns everything to the LEFT */
+        text-align: left;        /* Ensures text is left-aligned */
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /* 2. Title and Sub-text adjustment */
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        margin: 15px 0;
+    }
+
+    .hero-sub {
+        margin-bottom: 25px; /* Space between sub and buttons */
+    }
+
+    /* 3. Keep buttons left-aligned */
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+        align-items: flex-start; /* Buttons align left */
+        margin-bottom: 40px !important;
+    }
+
+    /* 4. Stats section - keep flow clean on the left */
+    .hero-stats {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start; /* Stats aligned left */
+        gap: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
 .btn-primary {
 	background: var(--accent);
 	color: #fff;
