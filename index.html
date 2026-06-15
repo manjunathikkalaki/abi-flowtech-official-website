@@ -643,8 +643,15 @@
             </div>
         </footer>
 
-        <!-- // WHATSAPP FLOAT BUTTON AND POPUP -->
+        <!-- // WHATSAPP FLOAT BUTTON -->
+        <div class="floating-container" id="whatsappFloat">
+            <button class="wa-btn" onclick="toggleWaPopup()">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+                CHAT WITH US
+            </button>
+        </div>
 
+        <!-- // WHATSAPP FLOAT POPUP -->
         <div class="popup-overlay" id="waPopupOverlay">
             <div class="wa-popup">
                 <button class="popup-close" onclick="toggleWaPopup()">&times;</button>
@@ -659,33 +666,26 @@
         </div>
 
         <!-- ✅ Call Button -->
-        <div id="draggable-call-btn" class="draggable-call-container">
-            <a href="tel:+123456789" class="call-wrapper">
+<div id="draggable-call-btn" class="draggable-call-container">
+    <a href="tel:+917760629336" class="call-wrapper">
 
-                <div class="call-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M6.6 10.8c1.5 2.9 3.8 5.2 6.7 6.7l2.2-2.2c.3-.3.7-.4 1.1-.3
-                        1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.1 22 
-                        2 13.9 2 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 
-                        0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.1 2.1z"/>
-                    </svg>
-                </div>
-
-                <div class="call-box">
-                    <div class="phone-number">+91 77606 29336</div>
-                    <div class="call-now">Call Now</div>
-                </div>
-
-            </a>
+        <div class="call-icon">
+            <svg viewBox="0 0 24 24">
+                <path fill="white" d="M6.62 10.79a15.054 15.054 0 006.59 6.59l2.2-2.2
+                a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 
+                1v3.5a1 1 0 01-1 1C10.07 21.01 2.99 13.93 2.99 
+                4a1 1 0 011-1H7.5a1 1 0 011 1c0 1.25.2 2.46.57 
+                3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/>
+            </svg>
         </div>
 
-        <!-- ✅ Container for WhatsApp -->
-        <div class="floating-container" id="whatsappFloat">
-            <button class="wa-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-                CHAT WITH US
-            </button>
+        <div class="call-box">
+            <div class="phone-number">+91 77606 29336</div>
+            <div class="call-now">Call Now</div>
         </div>
+
+    </a>
+</div>
 
         <script src="js/script.js"></script>
     </body>
