@@ -164,6 +164,79 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	// ── 5. FORM SUBMIT EXECUTION INTO EXCEL ──
+	// if (form) {
+
+	// 	form.addEventListener('submit', async function (e) {
+
+	// 		e.preventDefault();
+
+	// 		let formValid = true;
+
+	// 		Object.keys(fields).forEach(key => {
+	// 			if (!validateField(key)) {
+	// 				formValid = false;
+	// 			}
+	// 		});
+
+	// 		if (!formValid) return;
+
+	// 		submitBtn.disabled = true;
+	// 		submitBtn.innerText = 'Sending Request...';
+
+	// 		const formData = new FormData();
+
+	// 		formData.append('name', fields.name.el.value);
+	// 		formData.append('company', document.getElementById('c_company').value || '');
+	// 		formData.append('phone', fields.phone.el.value);
+	// 		formData.append('email', fields.email.el.value);
+	// 		formData.append('service', fields.service.el.value);
+	// 		formData.append('message', fields.msg.el.value);
+
+	// 		// Debugging
+	// 		for (const pair of formData.entries()) {
+	// 			console.log(pair[0] + ': ' + pair[1]);
+	// 		}
+
+	// 		try {
+
+	// 			await fetch(
+	// 				'https://script.google.com/macros/s/AKfycbyvugvUgiOqmnonubmSUAASHvNanQAUVHwQBYeDIAFQ_z_TWgKjoGvzk_o9syu_L4-b/exec',
+	// 				{
+	// 					method: 'POST',
+	// 					body: formData,
+	// 					mode: 'no-cors'
+	// 				}
+	// 			);
+
+	// 			console.log('Form submitted successfully');
+
+	// 			successMsg.style.display = 'block';
+
+	// 			form.reset();
+
+	// 			document.querySelectorAll('.valid').forEach(el => {
+	// 				el.classList.remove('valid');
+	// 			});
+
+	// 			document.querySelectorAll('.show').forEach(el => {
+	// 				el.classList.remove('show');
+	// 			});
+
+	// 		} catch (error) {
+
+	// 			console.error('Submission Error:', error);
+	// 			alert('Failed to submit enquiry.');
+
+	// 		} finally {
+
+	// 			submitBtn.disabled = false;
+	// 			submitBtn.innerText = 'Send Enquiry →';
+
+	// 		}
+	// 	});
+	// }
+
 	// ── 6. INTERSECTION OBSERVER ANIMATION ──
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach(e => {
@@ -460,24 +533,51 @@ function sendToWhatsApp() {
     toggleWaPopup();
 }
 
-// Drag & Drop
-const floatBtn = document.getElementById('whatsappFloat');
-let isDragging = false;
-let startX, startY, initialLeft, initialTop;
+// Function to enable dragging on any element
+function makeDraggable(elementId) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
 
-floatBtn.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    initialLeft = floatBtn.offsetLeft;
-    initialTop = floatBtn.offsetTop;
-});
+    let isDragging = false;
+    let startX, startY, initialLeft, initialTop;
 
-document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    floatBtn.style.left = (initialLeft + (e.clientX - startX)) + 'px';
-    floatBtn.style.top = (initialTop + (e.clientY - startY)) + 'px';
-    floatBtn.style.right = 'auto'; floatBtn.style.bottom = 'auto';
-});
+    const startDrag = (e) => {
+        isDragging = true;
+        // Use clientX/Y for mouse, touches[0] for touchscreens
+        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+        
+        startX = clientX;
+        startY = clientY;
+        initialLeft = el.offsetLeft;
+        initialTop = el.offsetTop;
+    };
 
-document.addEventListener('mouseup', () => isDragging = false);
+    const drag = (e) => {
+        if (!isDragging) return;
+        e.preventDefault(); // Prevents page scrolling while dragging
+        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+
+        el.style.left = (initialLeft + (clientX - startX)) + 'px';
+        el.style.top = (initialTop + (clientY - startY)) + 'px';
+        el.style.right = 'auto'; 
+        el.style.bottom = 'auto';
+    };
+
+    const stopDrag = () => { isDragging = false; };
+
+    // Mouse Events
+    el.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+
+    // Touch Events (Essential for Mobile)
+    el.addEventListener('touchstart', startDrag);
+    document.addEventListener('touchmove', drag, { passive: false });
+    document.addEventListener('touchend', stopDrag);
+}
+
+// Initialize dragging for both buttons
+makeDraggable('draggable-call-btn');
+makeDraggable('whatsappFloat');
