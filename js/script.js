@@ -165,77 +165,77 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// ── 5. FORM SUBMIT EXECUTION INTO EXCEL ──
-	// if (form) {
+	if (form) {
 
-	// 	form.addEventListener('submit', async function (e) {
+		form.addEventListener('submit', async function (e) {
 
-	// 		e.preventDefault();
+			e.preventDefault();
 
-	// 		let formValid = true;
+			let formValid = true;
 
-	// 		Object.keys(fields).forEach(key => {
-	// 			if (!validateField(key)) {
-	// 				formValid = false;
-	// 			}
-	// 		});
+			Object.keys(fields).forEach(key => {
+				if (!validateField(key)) {
+					formValid = false;
+				}
+			});
 
-	// 		if (!formValid) return;
+			if (!formValid) return;
 
-	// 		submitBtn.disabled = true;
-	// 		submitBtn.innerText = 'Sending Request...';
+			submitBtn.disabled = true;
+			submitBtn.innerText = 'Sending Request...';
 
-	// 		const formData = new FormData();
+			const formData = new FormData();
 
-	// 		formData.append('name', fields.name.el.value);
-	// 		formData.append('company', document.getElementById('c_company').value || '');
-	// 		formData.append('phone', fields.phone.el.value);
-	// 		formData.append('email', fields.email.el.value);
-	// 		formData.append('service', fields.service.el.value);
-	// 		formData.append('message', fields.msg.el.value);
+			formData.append('name', fields.name.el.value);
+			formData.append('company', document.getElementById('c_company').value || '');
+			formData.append('phone', fields.phone.el.value);
+			formData.append('email', fields.email.el.value);
+			formData.append('service', fields.service.el.value);
+			formData.append('message', fields.msg.el.value);
 
-	// 		// Debugging
-	// 		for (const pair of formData.entries()) {
-	// 			console.log(pair[0] + ': ' + pair[1]);
-	// 		}
+			// Debugging
+			for (const pair of formData.entries()) {
+				console.log(pair[0] + ': ' + pair[1]);
+			}
 
-	// 		try {
+			try {
 
-	// 			await fetch(
-	// 				'https://script.google.com/macros/s/AKfycbyvugvUgiOqmnonubmSUAASHvNanQAUVHwQBYeDIAFQ_z_TWgKjoGvzk_o9syu_L4-b/exec',
-	// 				{
-	// 					method: 'POST',
-	// 					body: formData,
-	// 					mode: 'no-cors'
-	// 				}
-	// 			);
+				await fetch(
+					'https://script.google.com/macros/s/AKfycbyvugvUgiOqmnonubmSUAASHvNanQAUVHwQBYeDIAFQ_z_TWgKjoGvzk_o9syu_L4-b/exec',
+					{
+						method: 'POST',
+						body: formData,
+						mode: 'no-cors'
+					}
+				);
 
-	// 			console.log('Form submitted successfully');
+				console.log('Form submitted successfully');
 
-	// 			successMsg.style.display = 'block';
+				successMsg.style.display = 'block';
 
-	// 			form.reset();
+				form.reset();
 
-	// 			document.querySelectorAll('.valid').forEach(el => {
-	// 				el.classList.remove('valid');
-	// 			});
+				document.querySelectorAll('.valid').forEach(el => {
+					el.classList.remove('valid');
+				});
 
-	// 			document.querySelectorAll('.show').forEach(el => {
-	// 				el.classList.remove('show');
-	// 			});
+				document.querySelectorAll('.show').forEach(el => {
+					el.classList.remove('show');
+				});
 
-	// 		} catch (error) {
+			} catch (error) {
 
-	// 			console.error('Submission Error:', error);
-	// 			alert('Failed to submit enquiry.');
+				console.error('Submission Error:', error);
+				alert('Failed to submit enquiry.');
 
-	// 		} finally {
+			} finally {
 
-	// 			submitBtn.disabled = false;
-	// 			submitBtn.innerText = 'Send Enquiry →';
+				submitBtn.disabled = false;
+				submitBtn.innerText = 'Send Enquiry →';
 
-	// 		}
-	// 	});
-	// }
+			}
+		});
+	}
 
 	// ── 6. INTERSECTION OBSERVER ANIMATION ──
 	const observer = new IntersectionObserver((entries) => {
