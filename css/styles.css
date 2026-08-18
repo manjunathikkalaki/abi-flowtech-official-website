@@ -44,25 +44,120 @@ nav {
 	box-shadow: 0 2px 20px rgba(0, 0, 0, .4);
 }
 
+/* NAVIGATION LOGO */
 .nav-logo {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 70px;
+    text-decoration: none;
+    flex-shrink: 0;
+    cursor: pointer;
 }
 
-.nav-logo svg {
-	height: 48px;
-	width: auto;
+/* LOGO IMAGE */
+.company-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+    flex-shrink: 0;
+
+    background: #041f3f;
+    border-radius: 6px;
 }
 
+/* LOGO CONTENT */
+.nav-logo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* COMPANY NAME */
 .nav-logo-text {
-	font-family: 'Barlow Condensed', sans-serif;
-	font-weight: 800;
-	font-size: 1.25rem;
-	letter-spacing: 1px;
-	color: #fff;
-	line-height: 1.1;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.nav-logo-text span {
+    color: #e05b14;
+}
+
+/* ORANGE DIVIDER */
+.nav-logo-line {
+    width: 100%;
+    max-width: 275px;
+    height: 1px;
+    background: #e05b14;
+    margin: 4px 0 6px;
+    opacity: 0.9;
+}
+
+/* SUBTITLE */
+.nav-logo-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .company-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .nav-logo-text {
+        font-size: 1.2rem;
+    }
+
+    .nav-logo-sub {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    .nav-logo-line {
+        max-width: 220px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .nav-logo {
+        gap: 8px;
+    }
+
+    .company-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .nav-logo-text {
+        font-size: 1.2rem;
+    }
+
+    .nav-logo-sub {
+        font-size: 0.55rem;
+        letter-spacing: 1.5px;
+    }
+
+    .nav-logo-line {
+        max-width: 160px;
+    }
 }
 
 .nav-logo-text span {
